@@ -11,9 +11,6 @@ def main():
     json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('.json')]
     english_tweets = 0
     tweets = 0
-    tweet_data = []
-    # test = [['d123412aidfjs', '29/3/10'], ['a1238989asdsaf', '14/3/15']]
-    # print(test[0][0], test[0][1])
     unique_tweets = {}
     for file in tqdm(json_files):
         with open(path_to_json + file, 'r') as f:

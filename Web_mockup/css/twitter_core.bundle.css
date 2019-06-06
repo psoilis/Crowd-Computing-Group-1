@@ -10338,12 +10338,12 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 .tweet.Tweet--invertedColors .HeartAnimation {
-    background-image: url(../../img/animations/web_heart_animation_media.png)
+    background-image: url(https://storage.cloud.google.com/crowd-computing-cdn-bucket/img/animations/web_heart_animation_edge.png)
 }
 
 .HeartAnimation {
     position: absolute;
-    background-image: url(../img/animations/web_heart_animation_edge.png);
+    background-image: url(https://storage.cloud.google.com/crowd-computing-cdn-bucket/img/animations/web_heart_animation_edge.png);
     background-position: left;
     background-repeat: no-repeat;
     background-size: 2900%;

@@ -1,15 +1,26 @@
 from utils import utils
 
 
-def image_presence(post):
+def time_on_twitter(post):
     """
-    Checks if the post contains an image
+    Calculates the users time on twitter in months
     :param post: the current post
-    :return: 1 if the post contains an image, else 0
+    :return: an integer that measures the months rounded up
     """
-    im = utils.img(post)
+    return utils.time_on_twitter(post['user_created_at'])
 
-    if im is None:
-        return 0
-    else:
-        return 1
+
+def number_of_followers(post):
+    return post['user_followers']
+
+
+def number_of_friends(post):
+    return post['user_friends']
+
+
+def is_verified(post):
+    return int(post['user_is_verified'])
+
+
+def handle_contains_numbers(post):
+    return int(any(char.isdigit() for char in post['user_twitter_handle']))

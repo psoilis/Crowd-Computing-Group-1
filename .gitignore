@@ -15,3 +15,6 @@ dataset/
 .DS_Store
 main/kmain.py
 main/classification/__pycache__/
+ML_model/utils/__pycache__/utils.cpython-37.pyc
+ML_model/features/__pycache__/UserBasedFeatures.cpython-37.pyc
+ML_model/features/__pycache__/ContextBasedFeatures.cpython-37.pyc

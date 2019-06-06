@@ -1,0 +1,60 @@
+body{
+    background: rgb(244, 248, 249);
+    font-family: 'Helvetica', Sans-Serif;
+}
+.tweet{
+    background:rgb(255, 255, 255);
+    border:1px solid rgb(225, 232, 237);
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:5px;
+    padding: 15px 20px;
+    margin-top: 30px;
+}
+.tweet .tweet-header .col{
+    display: inline-block;
+    vertical-align: middle;
+}
+.tweet .tweet-header .account-info{
+    width:68%;
+}
+.tweet .tweet-header .account-info strong{
+    font-weight: 600;
+}
+.tweet .tweet-header .account-info p{
+    margin:5px;
+}
+.tweet .tweet-header .follow-button{
+    float: right;
+    top: 10px;
+    position: relative;
+}
+.tweet .tweet-header .follow-button a{
+    color:rgb(85, 172, 238);
+    border: 1px solid rgb(85, 172, 238);
+    border-radius: 5px;
+    padding:5px 15px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.tweet-body p{
+    margin: 10px 0 0 0;
+}
+.tweet-body .text{
+    color: rgb(105, 120, 130);
+    font-size: 14px;
+}
+.tweet-body .tweet-footer{
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    color:rgb(105, 120, 130)
+}
+.tweet-body .tweet-footer li{
+    display: inline-block;
+    margin-right: 15px;
+}
+.tweet-body .tweet-footer li img{
+    margin-right: 5px;
+}

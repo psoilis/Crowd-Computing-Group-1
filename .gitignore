@@ -1,0 +1,17 @@
+.idea
+main/venv/
+main/.idea/
+main/dataset/*
+main/__pycache__/
+main/features/__pycache__/
+main/utils/__pycache__/
+main/.pytest_cache
+main/media/*
+main/data.json
+server/nlp/.idea
+server/nlp/target
+server/nlp/nlp.iml
+dataset/
+.DS_Store
+main/kmain.py
+main/classification/__pycache__/

@@ -19,14 +19,14 @@ class NaiveBayes:
         """
         self.gnb = GaussianNB(priors=[0.76, 0.24])
 
-    def train(self, training_data, labels):
+    def train(self, x_train, y_train):
         """
         Function that trains the classifier
 
-        :arg training_data: Training feature vectors
-        :arg labels: Training labels
+        :arg x_train: Training feature vectors
+        :arg y_train: Training labels
          """
-        self.gnb = self.gnb.fit(training_data, labels)
+        self.gnb = self.gnb.fit(x_train, y_train)
 
     def predict(self, data, test_labels, plot_conf=False):
         """
@@ -58,6 +58,10 @@ class NaiveBayes:
             "f1": f1
         }
         return evaluation
+
+    def predict_with_confidence(self, data, confidence):
+        return list(map(lambda p: 0 if abs(p[0]-p[1]) < confidence else (lambda r: 1 if r[0] > r[1] else -1)(p),
+                        self.gnb.predict_proba(data)))
 
     def cross_validation(self, data, labels):
         """

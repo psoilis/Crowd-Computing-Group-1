@@ -64,6 +64,10 @@ class RandomForest:
         # Return the metrics
         return evaluation
 
+    def predict_with_confidence(self, data, confidence):
+        return list(map(lambda p: 0 if abs(p[0]-p[1]) < confidence else (lambda r: 1 if r[0] > r[1] else -1)(p),
+                        self.rdmf.predict_proba(data)))
+
     def cross_validation(self, data, labels):
         """
         Function that does stratified k-fold cross validation for better error estimation

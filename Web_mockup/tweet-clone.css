@@ -61,3 +61,6 @@
     display: inherit;
     margin: 0 auto 0;
 }
+.tweet .false{
+    display: none !important;
+}

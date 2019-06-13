@@ -1,7 +1,3 @@
-body{
-    background: rgb(244, 248, 249);
-    font-family: 'Helvetica', Sans-Serif;
-}
 .tweet{
     background:rgb(255, 255, 255);
     border:1px solid rgb(225, 232, 237);
@@ -57,4 +53,11 @@ body{
 }
 .tweet-body .tweet-footer li img{
     margin-right: 5px;
+}
+.tweet p{
+    display: inherit;
+}
+.tweet img{
+    display: inherit;
+    margin: 0 auto 0;
 }

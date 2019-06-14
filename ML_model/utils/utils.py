@@ -9,7 +9,7 @@ analyser = SentimentIntensityAnalyzer()
 
 
 def time_on_twitter(user_signup_date):
-    d1 = datetime.strptime(datetime.strptime(user_signup_date, '%a %b %d %H:%M:%S %z %Y').strftime('%Y-%m-%d'), '%Y-%m-%d')
+    d1 = datetime.strptime(datetime.strptime(user_signup_date, '%d-%m-%Y').strftime('%Y-%m-%d'), '%Y-%m-%d')
     d2 = datetime.strptime(datetime.now().strftime('%Y-%m-%d'), '%Y-%m-%d')
     return math.ceil((abs((d1 - d2).days)/30.44))
 

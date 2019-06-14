@@ -3,6 +3,7 @@ from features.UserBasedFeatures import time_on_twitter, number_of_followers, num
 from features.ContextBasedFeatures import has_url, has_shortened_url, has_emoji, has_user_mention, \
     number_of_user_mentions, number_of_hashtags, word_count, char_count, get_sentiment_polarity_feature,\
     punctuation_count
+from utils import utils
 import json
 from classification import RandomForest, NaiveBayes, MaximumEntropy, XGBoost
 from sklearn.datasets import make_classification
@@ -61,3 +62,9 @@ me.train(x_train=X_train, y_train=y_train)
 
 print(me.predict_with_confidence(data=X_test, confidence=0.1))
 
+
+date = "Tue Mar 07 04:00:17 +0000 2017"
+
+print(utils.transform_user_date(date))
+
+print(utils.transform_tweet_date(date))

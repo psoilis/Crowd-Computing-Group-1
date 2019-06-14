@@ -65,7 +65,7 @@ class XGBoost:
         return evaluation
 
     def predict_with_confidence(self, data, confidence):
-        return list(map(lambda p: 0 if abs(p[0]-p[1]) < confidence else (lambda r: 1 if r[0] > r[1] else -1)(p),
+        return list(map(lambda p: -1 if abs(p[0]-p[1]) < confidence else (lambda r: 0 if r[0] > r[1] else 1)(p),
                         self.xg_clf.predict_proba(data)))
 
     def cross_validation(self, data, labels):

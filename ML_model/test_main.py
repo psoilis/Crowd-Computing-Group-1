@@ -32,7 +32,7 @@ for post in json_array:
     print('Tweets sentiment: ', get_sentiment_polarity_feature(post))
 
 
-# test classifiers with confidence output -> 0 for uncertain 1 for class 1 -1 for class 2
+# test classifiers with confidence output -> -1 for uncertain 0 for (class 1) 1 for (class 2)
 RANDOM_STATE = 123
 
 X, y = make_classification(n_samples=500, n_features=25,

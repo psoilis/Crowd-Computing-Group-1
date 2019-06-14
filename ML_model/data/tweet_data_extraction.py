@@ -1,7 +1,9 @@
 from tqdm import tqdm
 from random import randint
+from utils import utils
 import os
 import json
+
 
 
 def main():
@@ -37,17 +39,11 @@ def main():
 def extract_info(data):
     tweet = {}
     tweet['tweet_id'] = data['id']
-    tweet['tweet_created_at'] = data['created_at']
+    tweet['tweet_created_at'] = utils.transform_date(data['created_at'])
     if 'extended_tweet' in data:
         tweet['tweet_text'] = data['extended_tweet']['full_text']
     else:
         tweet['tweet_text'] = data['text']
-    # if 'retweeted_status' in data:
-    #     if 'extended_tweet' in data['retweeted_status']:
-    #         tweet['tweet_text'] = data['retweeted_status']['extended_tweet']['full_text']
-    # else:
-    #     tweet['tweet_text'] = data['text']
-    # If one of the five in_reply_to fields is not null
     if data['in_reply_to_status_id'] is not None or data['in_reply_to_status_id_str'] is not None or data['in_reply_to_user_id'] is not None\
             or data['in_reply_to_user_id_str'] is not None or data['in_reply_to_screen_name'] is not None:
         tweet['tweet_is_reply'] = True
@@ -59,7 +55,7 @@ def extract_info(data):
     tweet['tweet_quotes'] = data['quote_count']
     tweet['user_name'] = data['user']['name']
     tweet['user_twitter_handle'] = data['user']['screen_name']
-    tweet['user_created_at'] = data['user']['created_at']
+    tweet['user_created_at'] = utils.transform_date(data['user']['created_at'])
     tweet['user_image'] = data['user']['profile_image_url']
     tweet['user_is_verified'] = data['user']['verified']
     tweet['user_followers'] = data['user']['followers_count']

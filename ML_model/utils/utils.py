@@ -110,9 +110,5 @@ def punctuation_count(content):
     return count
 
 
-def transform_user_date(date):
+def transform_date(date):
     return datetime.strptime(date, '%a %b %d %H:%M:%S %z %Y').strftime('%d-%m-%Y')
-
-
-def transform_tweet_date(date):
-    return datetime.strptime(date, '%a %b %d %H:%M:%S %z %Y').strftime('%H:%M %d-%m-%Y')

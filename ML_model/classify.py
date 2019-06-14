@@ -1,17 +1,18 @@
 from classification import RandomForest, NaiveBayes, MaximumEntropy, XGBoost
-from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
+import pandas as pd
 
-
-# test classifiers with confidence output -> -1 for uncertain 0 for (class 1) 1 for (class 2)
-# TODO: change X, y to read them from features.csv
 RANDOM_STATE = 123
 
-X, y = make_classification(n_samples=500, n_features=25,
-                           n_clusters_per_class=1, n_informative=15,
-                           random_state=RANDOM_STATE)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+df = pd.read_csv('data/features.csv')
 
+X = df.loc[:, ~df.columns.isin(['Label', 'Tweet_ID'])].values
+
+y = df['Label'].values
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=RANDOM_STATE)
+
+# test classifiers with confidence output -> -1 for uncertain 0 for (class 1) 1 for (class 2)
 rf = RandomForest.RandomForest()
 rf.train(x_train=X_train, y_train=y_train)
 print(rf.predict_with_confidence(data=X_test, confidence=0.1))

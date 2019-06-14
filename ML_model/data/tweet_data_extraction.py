@@ -38,7 +38,7 @@ def main():
 
 def extract_info(data):
     tweet = {}
-    tweet['tweet_id'] = data['id']
+    tweet['tweet_id'] = str(data['id'])
     tweet['tweet_created_at'] = utils.transform_date(data['created_at'])
     if 'extended_tweet' in data:
         tweet['tweet_text'] = data['extended_tweet']['full_text']

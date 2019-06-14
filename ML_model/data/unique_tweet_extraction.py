@@ -5,8 +5,7 @@ from datetime import datetime
 
 
 def main():
-    # path_to_json = 'C:/Users/Panos/Downloads/newtweets/'
-    path_to_json = '/Users/psoilis/Documents/TU_Delft/Q4/Crowd_Computing/Group_Assignment_Dataset/newtweets/'
+    path_to_json = 'D:/Documents/Master_Studies/TU Delft-MSc Computer Science/Q4/Crowd_Computing/march18_vaccine_twitter/'
     # Extracting all the json files from the directory
     json_files = [pos_json for pos_json in os.listdir(path_to_json) if pos_json.endswith('.json')]
     english_tweets = 0

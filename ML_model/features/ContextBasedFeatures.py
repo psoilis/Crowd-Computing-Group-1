@@ -48,3 +48,15 @@ def get_sentiment_polarity_feature(post):
 
 def punctuation_count(post):
     return utils.punctuation_count(post['tweet_text'])
+
+
+def number_of_likes(post):
+    return post['tweet_likes']
+
+
+def number_of_retweets(post):
+    return post['tweet_retweets']
+
+
+def number_of_replies(post):
+    return post['tweet_replies']

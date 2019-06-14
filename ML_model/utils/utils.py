@@ -99,7 +99,7 @@ def len_words(content):
 
 
 def get_tweets_sentiment(content):
-    return analyser.polarity_scores(content)
+    return analyser.polarity_scores(content)['compound']
 
 
 def punctuation_count(content):

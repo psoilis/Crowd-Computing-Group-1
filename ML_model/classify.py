@@ -1,10 +1,3 @@
-from features.UserBasedFeatures import time_on_twitter, number_of_followers, number_of_friends, is_verified, \
-    handle_contains_numbers
-from features.ContextBasedFeatures import has_url, has_shortened_url, has_emoji, has_user_mention, \
-    number_of_user_mentions, number_of_hashtags, word_count, char_count, get_sentiment_polarity_feature,\
-    punctuation_count
-from utils import utils
-import json
 from classification import RandomForest, NaiveBayes, MaximumEntropy, XGBoost
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split

@@ -2,12 +2,28 @@
 
 Crowd computing assignment created using [Figure Eight](https://www.figure-eight.com/) for the crowdsourcing part and [scikit-learn](https://scikit-learn.org) for the Machine Learning part. This project is done for TU Delft's course Crowd Computing (CS4145) 2019.
 
-## System Architecture :green_book:
+## System Overview :green_book:
+
+Explain about the tasks and what we want to achieve
 
 ### Crouwdsourcing Task #1
 
+Explain things about task 1 and how we use it for the ML part. An example of our first annotation task is showcased in the image below. 
+
+<p align="center">
+  <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/task1_example.PNG" height="380" width="628">
+</p>
+
+
 ### Crouwdsourcing Task #2 
 
+Explain things about task 2. An example of our second annotation task is showcased in the image below. 
+
+<p align="center">
+  <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/task2_example.PNG" height="218" width="784">
+</p>
+
+### Machine Learning Task
 
 ## Setup :computer:
 
@@ -32,3 +48,18 @@ from `Figure_Eight/low_confidence/` this time.
 ### Machine Learning Classifiers 
 
 ### Pasing the Classification output for the second task
+
+
+
+
+## Team members :busts_in_silhouette:
+
+[Stavrangelos Gamvrinos](https://github.com/agamvrinos)
+
+[Jody Liu](https://github.com/jdyli)
+
+[Kyriakos Psarakis](https://github.com/kPsarakis)
+
+[Hendrig Sellik](https://github.com/hsellik) 
+
+[Panagiotis Soilis](https://github.com/psoilis)

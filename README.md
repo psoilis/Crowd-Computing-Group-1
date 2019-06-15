@@ -19,7 +19,8 @@ Crowd computing assignment created using [Figure Eight](https://www.figure-eight
 * Change "Rows Per Page" to 5 under "Settings -> Pay"
 * Create Honeypot Questions under "Quality" tab
 * Change minimum time per page to 60s under "Settings -> Quality Control -> Quality Control Settings"
-* Change minimum accuracy for Honeypot questions to 60% under "Settings -> Quality Control -> Test Questions"
+* Change minimum accuracy for Test questions to 60% under "Settings -> Quality Control -> Test Questions"
+* Navigate to "Launch" tab and change Judgments per Row
 * Launch job  
   
   

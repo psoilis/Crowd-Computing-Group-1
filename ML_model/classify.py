@@ -12,7 +12,8 @@ y = df['Label'].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=RANDOM_STATE)
 
-# test classifiers with confidence output -> -1 for uncertain 0 for (class 1) 1 for (class 2)
+# test classifiers with confidence output tuple (confidence, judgment) confidence -> 0 (low confidence), 1 (high)
+#                                                                      judgment -> 0 (not credible), 1 (credible)
 rf = RandomForest.RandomForest()
 rf.train(x_train=X_train, y_train=y_train)
 print(rf.predict_with_confidence(data=X_test, confidence=0.1))

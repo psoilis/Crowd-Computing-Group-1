@@ -64,9 +64,13 @@ class RandomForest:
         # Return the metrics
         return evaluation
 
+    @staticmethod
+    def choose_class():
+        return lambda r: 0 if r[0] > r[1] else 1
+
     def predict_with_confidence(self, data, confidence):
-        return list(map(lambda p: -1 if abs(p[0]-p[1]) < confidence else (lambda r: 0 if r[0] > r[1] else 1)(p),
-                        self.rdmf.predict_proba(data)))
+        return list(map(lambda p: (0, self.choose_class()(p)) if abs(p[0]-p[1]) < confidence else
+                    (1, self.choose_class()(p)), self.rdmf.predict_proba(data)))
 
     def cross_validation(self, data, labels):
         """

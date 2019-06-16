@@ -6,6 +6,10 @@ Crowd computing assignment created using [Figure Eight](https://www.figure-eight
 
 Explain about the tasks and what we want to achieve
 
+<p align="center">
+  <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/TweetGuard.png" height="383" width="784">
+</p>
+
 ### Crouwdsourcing Task #1
 
 Explain things about task 1 and how we use it for the ML part. An example of our first annotation task is showcased in the image below. 

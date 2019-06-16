@@ -4,10 +4,10 @@ Crowd computing assignment created using [Figure Eight](https://www.figure-eight
 
 ## System Overview :green_book:
 
-Explain about the tasks and what we want to achieve
+The system created within this assignment aims to predict the credibility of a given tweet. In particular, a batch of unlabeled tweets is first annotated via a crowdsourcing task to create a training set than can train a machine learning model. Following that, the trained model can predict the credibility of new unseen tweets. That said, the model's predictions can be mistaken. Therefore, a second crowdsourcing task was introduced which receives low confidence predictions by the model and tweets flagged as incorrectly labeled by Twitter users. These samples are re-annotated and forwarded on Twitter while the new labeled data can also be used to re-train the machine learning model, thus increasing its prediction accuracy.
 
 <p align="center">
-  <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/TweetGuard.png" height="383" width="784">
+  <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/TweetGuard.png" height="307" width="628">
 </p>
 
 ### Crouwdsourcing Task #1

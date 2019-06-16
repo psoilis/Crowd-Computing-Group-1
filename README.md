@@ -4,7 +4,7 @@ Crowd computing assignment created using [Figure Eight](https://www.figure-eight
 
 ## System Overview :green_book:
 
-The system created within this assignment aims to predict the credibility of a given tweet. In particular, a batch of unlabeled tweets is first annotated via a crowdsourcing task to create a training set than can train a machine learning model. Following that, the trained model can predict the credibility of new unseen tweets. That said, the model's predictions can be mistaken. Therefore, a second crowdsourcing task was introduced which receives low confidence predictions by the model and tweets flagged as incorrectly labeled by Twitter users. These samples are re-annotated and forwarded on Twitter while the new labeled data can also be used to re-train the machine learning model, thus increasing its prediction accuracy.
+The system created within this assignment aims to predict the credibility of a tweet about human vaccination. In particular, a batch of unlabeled tweets is first annotated via a crowdsourcing task to create a training set than can train a machine learning model. Following that, the trained model can predict the credibility of new unseen tweets. That said, the model's predictions can be mistaken. Therefore, a second crowdsourcing task was introduced which receives low confidence predictions by the model and tweets flagged as incorrectly labeled by Twitter users. These samples are re-annotated and forwarded on Twitter while the new labeled data can also be used to re-train the machine learning model, thus increasing its prediction accuracy. An overivew of the proposed pipeline can be found in the graph below.
 
 <p align="center">
   <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/TweetGuard.png" height="307" width="628">
@@ -12,7 +12,10 @@ The system created within this assignment aims to predict the credibility of a g
 
 ### Crouwdsourcing Task #1
 
-Explain things about task 1 and how we use it for the ML part. An example of our first annotation task is showcased in the image below. 
+This task refers to the annotation of the unlabeled batch which is to be used as a training set for the machine learning model. The worker is required to answer three questions:
+1. Validate whether the tweet contains information about human vaccination or not.
+2. Annotate the tweet with regard to its credibility.
+3. Provide reasoning behind the factors that influenced his or her annotation.
 
 <p align="center">
   <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/task1_example.PNG" height="380" width="628">
@@ -21,7 +24,9 @@ Explain things about task 1 and how we use it for the ML part. An example of our
 
 ### Crouwdsourcing Task #2 
 
-Explain things about task 2. An example of our second annotation task is showcased in the image below. 
+This task corresponds to the tweets that need to be re-annotated. The worker answers two questions:
+1. Whether the tweet contains information about human vaccination or not.
+2. He or she is provided with the predicted annotation of the model and has to specify whether they agree with it or not.
 
 <p align="center">
   <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/task2_example.PNG" height="218" width="784">

@@ -34,7 +34,11 @@ This task corresponds to the tweets that need to be re-annotated. The worker ans
 
 ### Machine Learning Part
 
-For the Machine Learning part, we selected the [Maximum Entropy](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier because it has proven to work well in similar applications. Moreover, we decided to make this classification task binary by merging the 'seems credible' and 'definitely credible' annotations into one class 'credible'(1 in the .csv files) and the 'definitely not credible' in another 'not credible'(0 in the .csv files). In addition, we tailored the model to work with confidence input. By that, we mean that if the difference between the two class probabilities is smaller than the confidence we assume that this judgment is with low confidence and give it as input to our second crowdsourcing task. However, since the budget/time was limited we did not have enough labeled data for meaningful results. Furthermore, due to the previously stated situation, further exploration into a better Machine Learning pipeline was limited.
+For the Machine Learning part, we selected the [Maximum Entropy](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier because it has proven to work well in similar applications. Moreover, we decided to make this classification task binary by merging the 'seems credible' and 'definitely credible' annotations into one class 'credible'(1 in the .csv files) and the 'definitely not credible' in another 'not credible'(0 in the .csv files). In addition, we tailored the model to work with confidence input. By that, we mean that if the difference between the two class probabilities is smaller than the confidence we assume that this judgment is with low confidence and give it as input to our second crowdsourcing task. However, since the budget/time was limited we did not have enough labeled data for meaningful results. Furthermore, due to the previously stated situation, further exploration into a better Machine Learning pipeline was limited. The Machine Learning pipeline is showcased below.
+ 
+ <p align="center">
+  <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/ML_pipeline.png" height="223" width="650">
+</p>
  
 ## Setup :computer:
 

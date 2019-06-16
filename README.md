@@ -4,7 +4,7 @@ Crowd computing assignment created using [Figure Eight](https://www.figure-eight
 
 ## System Overview :green_book:
 
-The system created within this assignment aims to predict the credibility of a tweet about human vaccination. In particular, a batch of unlabeled tweets is first annotated via a crowdsourcing task to create a training set that can be used to train a machine learning model. Following that, the trained model can predict the credibility of new unseen tweets. That said, the model's predictions can be mistaken. Therefore, a second crowdsourcing task is introduced which receives low confidence predictions by the model and tweets flagged as incorrectly labeled by Twitter users. These samples are re-annotated and forwarded on Twitter while the new labeled data can also be used to re-train the machine learning model, thus increasing its prediction accuracy. An overivew of the proposed pipeline can be found in the graph below.
+The system created within this assignment aims to predict the credibility of a tweet about human vaccination. In particular, a batch of unlabeled tweets is first annotated via a crowdsourcing task to create a training set that can be used to train a machine learning model. Following that, the trained model can predict the credibility of new unseen tweets. That said, the model's predictions can be mistaken. Therefore, a second crowdsourcing task is introduced which receives low confidence predictions by the model and by the tweets flagged as incorrectly labeled by Twitter users. These samples are re-annotated and forwarded on Twitter while the new labeled data can also be used to re-train the machine learning model, thus increasing its prediction accuracy. An overview of the proposed pipeline can be found in the graph below.
 
 <p align="center">
   <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/TweetGuard.png" height="307" width="628">
@@ -14,7 +14,7 @@ The system created within this assignment aims to predict the credibility of a t
 
 This task refers to the annotation of the unlabeled tweet batch which is used as a training set for the machine learning model. The worker is required to answer three questions:
 1. Validate whether the tweet contains information about human vaccination or not.
-2. Annotate the tweet with regard to its credibility.
+2. Annotate the tweet with regards to its credibility.
 3. Provide reasoning behind the factors that influenced his or her annotation.
 
 <p align="center">
@@ -34,7 +34,7 @@ This task corresponds to the tweets that need to be re-annotated. The worker ans
 
 ### Machine Learning Part
 
-For the Machine Learning part, we selected the [Maximum Entropy](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier because it has proven to work well in similar applications. Moreover, we decided to make this classification task binary by merging the 'seems credible' and 'definitely credible' annotations into one class 'credible'(1 in the .csv files) and the 'definitely not credible' in another 'not credible'(0 in the .csv files). In addition, we tailored the model to work with confidence input. By that, we mean that if the difference between the two class probabilities is smaller than the confidence we assume that this judgment is with low confidence and give it as input to our second crowdsourcing task. However, since the budget/time was limited we did not have enough labeled data for meaningful results. Furthermore, due to the previously stated situation, further exploration into a better Machine Learning pipeline was limited. The Machine Learning pipeline is showcased below.
+For the Machine Learning part, we selected the [Maximum Entropy](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier because it has proven to work well in similar applications. Moreover, we decided to make this classification task binary by merging the 'seems credible' and 'definitely credible' annotations into one class 'credible' (1 in the .csv files) and the 'definitely not credible' in another 'not credible' (0 in the .csv files). In addition, we tailored the model to work with confidence input. By that, we mean that if the difference between the two class probabilities is smaller than the confidence we assume that this judgment is with low confidence and give it as input to our second crowdsourcing task. However, since the budget/ time was limited we did not have enough labeled data for meaningful results. Furthermore, due to the previously stated situation, further exploration into a better Machine Learning pipeline was limited. The Machine Learning pipeline is showcased below.
  
  <p align="center">
   <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/ML_pipeline.png" height="223" width="650">

@@ -4,7 +4,7 @@ Crowd computing assignment created using [Figure Eight](https://www.figure-eight
 
 ## System Overview :green_book:
 
-The system created within this assignment aims to predict the credibility of a tweet about human vaccination. In particular, a batch of unlabeled tweets is first annotated via a crowdsourcing task to create a training set than can train a machine learning model. Following that, the trained model can predict the credibility of new unseen tweets. That said, the model's predictions can be mistaken. Therefore, a second crowdsourcing task was introduced which receives low confidence predictions by the model and tweets flagged as incorrectly labeled by Twitter users. These samples are re-annotated and forwarded on Twitter while the new labeled data can also be used to re-train the machine learning model, thus increasing its prediction accuracy. An overivew of the proposed pipeline can be found in the graph below.
+The system created within this assignment aims to predict the credibility of a tweet about human vaccination. In particular, a batch of unlabeled tweets is first annotated via a crowdsourcing task to create a training set that can be used to train a machine learning model. Following that, the trained model can predict the credibility of new unseen tweets. That said, the model's predictions can be mistaken. Therefore, a second crowdsourcing task is introduced which receives low confidence predictions by the model and tweets flagged as incorrectly labeled by Twitter users. These samples are re-annotated and forwarded on Twitter while the new labeled data can also be used to re-train the machine learning model, thus increasing its prediction accuracy. An overivew of the proposed pipeline can be found in the graph below.
 
 <p align="center">
   <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/TweetGuard.png" height="307" width="628">
@@ -12,7 +12,7 @@ The system created within this assignment aims to predict the credibility of a t
 
 ### Crouwdsourcing Task #1
 
-This task refers to the annotation of the unlabeled batch which is to be used as a training set for the machine learning model. The worker is required to answer three questions:
+This task refers to the annotation of the unlabeled tweet batch which is used as a training set for the machine learning model. The worker is required to answer three questions:
 1. Validate whether the tweet contains information about human vaccination or not.
 2. Annotate the tweet with regard to its credibility.
 3. Provide reasoning behind the factors that influenced his or her annotation.
@@ -26,7 +26,7 @@ This task refers to the annotation of the unlabeled batch which is to be used as
 
 This task corresponds to the tweets that need to be re-annotated. The worker answers two questions:
 1. Whether the tweet contains information about human vaccination or not.
-2. He or she is provided with the predicted annotation of the model and has to specify whether they agree with it or not.
+2. They are provided with the predicted annotation of the model and have to specify whether they agree with it or not.
 
 <p align="center">
   <img src="https://github.com/psoilis/Crowd-Computing-Group-1/blob/master/images/task2_example.PNG" height="218" width="784">
@@ -125,10 +125,10 @@ high_confidence.loc[:, ~high_confidence.columns.isin(['Confidence'])]\
 In order to parse Figure Eight's Output we created a Python script located in `ML_Model/utils/results.py` that takes two parameters, the location of the Figure Eight's output as the input file and the location that we want to write the merged file.
 
 #### Machine Learning Classifiers 
-The code we developed for the classification with confidence using the Maximum Entropy classifier is located in `ML_Model/classification/MaximumEntropy.py` and is a Python class that has two main functions `train` for taraining the model and `predict_with_confidence` that gives spredictions based on the given confidence level.
+The code developed for the classification with confidence using the Maximum Entropy classifier is located in `ML_Model/classification/MaximumEntropy.py` and is a Python class that has two main functions: `train` for training the model and `predict_with_confidence` that gives predictions based on the given confidence level.
 
 #### JSON to XLSX 
-An other addition is that Figure8 wants the data in XLSX format so we created a script that transforms the JSON file that we get from Twitter's API into the required XLSX format in `ML_Model/utils/from_JSON_to_XLSX.py`
+An other addition is that Figure-Eight requires the input data as an XLSX file. As a result, a script was created that transforms the JSON file obtained from Twitter's API into the required XLSX format in `ML_Model/utils/from_JSON_to_XLSX.py`
 
 
 ## Team members :busts_in_silhouette:
